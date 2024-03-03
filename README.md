@@ -206,6 +206,21 @@ class ProductSerializer(serializers.ModelSerializer):
 
 ## API с выведением списка уроков по конкретному продукту
 ```
+
+
+# ПРИЛОЖЕНИЕ
+Для большего удобства был написал очень простой front/back для возможности создавать курсы и регистрироваться на них. Ниже представлено подробное описание этого процесса:
+1. Окно для регистрации
+![image](https://github.com/Eugene531/HardQode/assets/94804642/787ca610-e813-447a-a02b-2bcf5ad6281a)
+
+2. После регистрации можно создать свой курс:
+![image](https://github.com/Eugene531/HardQode/assets/94804642/f5c2173e-4285-4fc5-9ab2-bf04a5e4645b)
+
+3. Также ваши курсы появляются в специальном меню:
+![image](https://github.com/Eugene531/HardQode/assets/94804642/4be10594-fc09-47a5-83dc-2c2f4a0d05c8)
+
+
+
 class LessonSerializer(serializers.ModelSerializer):
     class Meta:
         model = Lesson

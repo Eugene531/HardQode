@@ -206,7 +206,11 @@ class ProductSerializer(serializers.ModelSerializer):
 
 ## API с выведением списка уроков по конкретному продукту
 ```
-
+class LessonSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Lesson
+        fields = ['id', 'product', 'name', 'video_link']
+```
 
 # ПРИЛОЖЕНИЕ
 Для большего удобства был написал очень простой front/back для возможности создавать курсы и регистрироваться на них. Ниже представлено подробное описание этого процесса:
@@ -218,11 +222,3 @@ class ProductSerializer(serializers.ModelSerializer):
 
 3. Также ваши курсы появляются в специальном меню:
 ![image](https://github.com/Eugene531/HardQode/assets/94804642/4be10594-fc09-47a5-83dc-2c2f4a0d05c8)
-
-
-
-class LessonSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Lesson
-        fields = ['id', 'product', 'name', 'video_link']
-```

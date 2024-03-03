@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h2>All Courses</h2>
+  {% for course in courses %}
+    {% if course.id %}
+      <a href="{% url 'course_detail' course.id %}">{{ course.product_name }}</a><br>
+    {% else %}
+      {{ course.product_name }}<br>
+    {% endif %}
+  {% endfor %}
+{% endblock %}

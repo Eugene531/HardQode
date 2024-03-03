@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h2>My Created Courses</h2>
+  {% for course in created_courses %}
+    <a href="{% url 'course_detail' course.id %}">{{ course.product_name }}</a><br>
+  {% endfor %}
+
+  <h2>All Courses</h2>
+  {% for course in courses_page %}
+    <a href="{% url 'course_detail' course.id %}">{{ course.product_name }}</a><br>
+  {% endfor %}
+
+  <div class="pagination">
+    <span class="step-links">
+        {% if courses_page.has_previous %}
+            <a href="?page=1">&laquo; first</a>
+            <a href="?page={{ courses_page.previous_page_number }}">previous</a>
+        {% endif %}
+
+        <span class="current">
+            Page {{ courses_page.number }} of {{ courses_page.paginator.num_pages }}.
+        </span>
+
+        {% if courses_page.has_next %}
+            <a href="?page={{ courses_page.next_page_number }}">next</a>
+            <a href="?page={{ courses_page.paginator.num_pages }}">last &raquo;</a>
+        {% endif %}
+    </span>
+  </div>
+{% endblock %}

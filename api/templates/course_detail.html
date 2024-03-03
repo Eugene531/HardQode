@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h2>Course Details - {{ course.product_name }}</h2>
+  <p><strong>Author:</strong> {{ author }}</p>
+  <p><strong>Start Date:</strong> {{ course.start_date }}</p>
+  <p><strong>Cost:</strong> {{ course.cost }}</p>
+
+  <h3>Groups:</h3>
+  {% for group in groups %}
+    <p>{{ group.name }} - Min: {{ group.min_users }}, Max: {{ group.max_users }}</p>
+  {% endfor %}
+{% endblock %}
